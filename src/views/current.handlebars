@@ -1,0 +1,15 @@
+    <main class="container">
+        <section class="row justify-content-center p-5">
+            <h1 class="mb-5 text-center">Perfil de usuario</h1>
+            <h2 class="mb-3 text-center">Bienvenid@ <strong>{{user.first_name}}</strong></h2>
+            <div class="col-md-12 col-lg-6">
+                <div class="mb-3"></div>
+                    <p><strong>Rol:</strong> {{user.role}}</p>
+                    <p><strong>ID de Usuario:</strong> {{user.id}}</p>
+                    <p><strong>E-mail:</strong> {{user.email}}</p>
+                    <div class="mt-3 mb-4"></div>
+                        <a href="/api/sessions/logout">Cerrar Sesión</a>
+                    </div>
+                </div>
+        </section>
+    </main>
