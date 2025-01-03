@@ -63,4 +63,4 @@ export class UserManager {
             throw new Error('Error al obtener los usuarios: ' + error.message);
         }
     }
-}
+} 
