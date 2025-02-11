@@ -1,5 +1,5 @@
-import userModel from './models/userModel.js';
-import { hashPassword } from '../utils/bcrypt.js';
+import userModel from '../models/userModel.js';
+import { hashPassword } from '../../utils/bcrypt.js';
 
 export class UserManager {
     async createUser(userData) {

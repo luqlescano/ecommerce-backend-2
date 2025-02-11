@@ -1,0 +1,16 @@
+    <main class="container">
+        <h1 class="mb-4">Carrito de Compras</h1>
+        {{#if cart.products.length}}
+            <ul>
+                {{#each cart.products}}
+                    <li>
+                        <strong>{{this.product.title}}</strong> - Cantidad: {{this.quantity}} - Precio: ${{this.product.price}}
+                        <a href="/cart/remove/{{this.product._id}}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </li>
+                {{/each}}
+            </ul>
+            <a href="/cart/purchase" class="btn btn-success">Finalizar Compra</a>
+        {{else}}
+            <p>No hay productos en tu carrito.</p>
+        {{/if}}
+    </main>

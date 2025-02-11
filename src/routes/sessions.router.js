@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import passport from 'passport';
 import { comparePassword } from '../utils/bcrypt.js';
-import { UserManager } from '../dao/userManager.js';
+import { UserManager } from '../dao/managers/userManager.js';
 import jwt from 'jsonwebtoken';
 import config from '../config.js';
+import UserDTO from '../dao/dto/user.dto.js';
 
 const router = Router();
 const userManager = new UserManager();
@@ -58,7 +59,8 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-    res.status(200).render('current', { user: req.user });
+    const userDTO = new UserDTO(req.user);
+    res.status(200).json(userDTO);
 });
 
 router.get('/logout', (req, res) => {
